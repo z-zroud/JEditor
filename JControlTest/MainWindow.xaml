@@ -1,0 +1,22 @@
+﻿<Window x:Class="JControlTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JControlTest"
+        xmlns:helper="clr-namespace:JControls.Helper;assembly=JControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="20">
+            <Button Style="{StaticResource ButtonStyle}"  Width="70" Height="40" >保存dsfsdfsdh哈哈</Button>
+            <Button Style="{StaticResource ButtonStyle2}" Margin="5" Width="70" Height="40" >保存</Button>
+            <Button Style="{StaticResource IconButtonStyle}" Margin="5" helper:AttachPropertyHelper.Icon="pack://application:,,,/JControlTest;component/Images/communication.svg" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
