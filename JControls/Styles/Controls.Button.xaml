@@ -2,20 +2,26 @@
                     xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
                     xmlns:helper="clr-namespace:JControls.Helper"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
     <!--基本Button样式(用于继承)-->
     <Style x:Key="ButtonBaseStyle" TargetType="Button">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="bd" 
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}" 
-                        BorderThickness="1" 
-                        CornerRadius="{Binding Path=(helper:AttachPropertyHelper.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
-                        <ContentPresenter x:Name="ContentElement" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
+                    <Grid>
+                        <Border
+                            CornerRadius="{Binding Path=(helper:ButtonBaseAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            Background="{TemplateBinding Background}">
+                        </Border>
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="{Binding Path=(helper:ButtonBaseAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                            <ContentPresenter x:Name="ContentElement" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -32,71 +38,67 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="ButtonBaseStyle2" TargetType="Button">
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
+
+    <Style x:Key="JPrimaryButtonStyle" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Padding" Value="5,0" />
+        <Setter Property="Background" Value="{DynamicResource Button.Primary.Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource Text.Foreground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Border.Color}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Button.Primary.MouseOver}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Button.Primary.Pressed}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="JPrimaryButtonWithCornerStyle" BasedOn="{StaticResource JPrimaryButtonStyle}" TargetType="Button">
+        <Setter Property="helper:ButtonBaseAttach.CornerRadius" Value="4" />
+    </Style>
+
+    <Style x:Key="JButtonWithInnerShadow" TargetType="Button">
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Padding" Value="5,0" />
+        <Setter Property="Background" Value="{DynamicResource Button.Primary.Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource Text.Foreground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Border.Color}" />
+        <Setter Property="helper:ButtonBaseAttach.CornerRadius" Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Border
-                            CornerRadius="{Binding Path=(helper:AttachPropertyHelper.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
-                            Background="{TemplateBinding Background}">
+                    <Grid >
+                        <Rectangle x:Name="Rectangle2" Fill="{TemplateBinding Background}" RadiusX="4" RadiusY="4" />
+                        <Border Margin="0" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4" BorderBrush="{TemplateBinding BorderBrush}">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="0" />
+                            </Border.Effect>
                         </Border>
-                        <Border x:Name="bd" 
-                           Background="{TemplateBinding Background}"
-                           BorderBrush="{TemplateBinding BorderBrush}" 
-                           BorderThickness="1" 
-                           CornerRadius="{Binding Path=(helper:AttachPropertyHelper.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
-                           <ContentPresenter x:Name="ContentElement" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+                        <Grid.OpacityMask>
+                            <VisualBrush Stretch="None" Visual="{Binding ElementName=Rectangle2}" />
+                        </Grid.OpacityMask>
                     </Grid>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value=".9" />
+                <Setter Property="Opacity" Value="0.9"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value=".6" />
+                <Setter Property="Opacity" Value="0.6"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value="0.4" />
+                <Setter Property="Opacity" Value="0.4"/>
             </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="ButtonStyle" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
-        <Setter Property="Background" Value="{DynamicResource Button.Primary.Background}" />
-        <Setter Property="Foreground" Value="{DynamicResource Text.Foreground}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Button.Border.Color}" />
-        <Setter Property="BorderThickness" Value="1.5" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Button.Primary.MouseOver}" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Button.Primary.Pressed}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
 
-    <Style x:Key="ButtonStyle2" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
-        <Setter Property="Background" Value="{DynamicResource Button.Primary.Background}" />
-        <Setter Property="Foreground" Value="{DynamicResource Text.Foreground}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Button.Border.Color}" />
-        <Setter Property="BorderThickness" Value="1.5" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Button.Primary.MouseOver}" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Button.Primary.Pressed}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-    
     <!--IconButton样式-->
     <Style x:Key="IconButtonStyle" TargetType="Button">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -107,14 +109,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border x:Name="bd" 
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}" 
-                        BorderThickness="{TemplateBinding BorderThickness}" 
-                        CornerRadius="{Binding Path=(helper:AttachPropertyHelper.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}" 
+                     BorderThickness="{TemplateBinding BorderThickness}" 
+                     CornerRadius="{Binding Path=(helper:ButtonBaseAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
                         <svgc:SvgViewbox 
-                            Margin="{TemplateBinding Padding}"
-                            IsHitTestVisible="False"
-                            Source="{Binding Path=(helper:AttachPropertyHelper.Icon), RelativeSource={RelativeSource TemplatedParent}}" />
+                         Margin="{TemplateBinding Padding}"
+                         IsHitTestVisible="False"
+                         Source="{Binding Path=(helper:ButtonBaseAttach.Icon), RelativeSource={RelativeSource TemplatedParent}}" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -130,10 +132,53 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
+    <Style x:Key="JGeometryButtonStyle" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border
+                            CornerRadius="{Binding Path=(helper:ButtonBaseAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            Background="{TemplateBinding Background}">
+                        </Border>
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="{Binding Path=(helper:ButtonBaseAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                            <Path 
+                                  Width="{Binding Path=(helper:ButtonBaseAttach.GeometrySize), RelativeSource={RelativeSource TemplatedParent}}" 
+                                  Height="{Binding Path=(helper:ButtonBaseAttach.GeometrySize), RelativeSource={RelativeSource TemplatedParent}}" 
+                                  Fill="{TemplateBinding Foreground}" 
+                                  SnapsToDevicePixels="True" 
+                                  Stretch="Uniform" 
+                                  Data="{Binding Path=(helper:ButtonBaseAttach.Geometry), RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value=".9" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value=".6" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <!--IconTextButton样式-->
     <Style x:Key="IconTextButtonStyle" TargetType="Button">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
     </Style>
+
+
+
 
 </ResourceDictionary>

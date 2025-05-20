@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>深度学习备份 2</title>
+    <defs>
+        <linearGradient x1="100%" y1="67.6571798%" x2="-3.60611772%" y2="31.2871256%" id="linearGradient-1">
+            <stop stop-color="#4A4A4A" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="29.880435%"></stop>
+            <stop stop-color="#FFFFFF" offset="48.3745693%"></stop>
+            <stop stop-color="#FFFFFF" offset="69.4393159%"></stop>
+            <stop stop-color="#4A4A4A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="87.9336208%" y1="2.88040507%" x2="16.3427105%" y2="94.0247815%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="43.5821554%"></stop>
+            <stop stop-color="#4A4A4A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="UI界面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="VG一级图标库icon" transform="translate(-108, -2838)">
+            <g id="深度学习备份-2" transform="translate(108, 2838)">
+                <rect id="矩形备份-3096" x="0" y="0" width="20" height="20"></rect>
+                <polygon id="路径-13备份" fill="url(#linearGradient-1)" points="3.24806947 5.56587843 17.2480695 13.5658784 16.7519305 14.4341216 2.75193053 6.43412157"></polygon>
+                <polygon id="路径-13备份" fill="url(#linearGradient-1)" transform="translate(10, 10) rotate(60.2551) translate(-10, -10)" points="3.24806947 5.56587843 17.2480695 13.5658784 16.7519305 14.4341216 2.75193053 6.43412157"></polygon>
+                <path d="M11,1.57735027 L16.7942286,4.92264973 C17.4130308,5.27991532 17.7942286,5.94016936 17.7942286,6.65470054 L17.7942286,13.3452995 C17.7942286,14.0598306 17.4130308,14.7200847 16.7942286,15.0773503 L11,18.4226497 C10.3811978,18.7799153 9.61880215,18.7799153 9,18.4226497 L3.20577137,15.0773503 C2.58696921,14.7200847 2.20577137,14.0598306 2.20577137,13.3452995 L2.20577137,6.65470054 C2.20577137,5.94016936 2.58696921,5.27991532 3.20577137,4.92264973 L9,1.57735027 C9.61880215,1.22008468 10.3811978,1.22008468 11,1.57735027 Z M9.65,2.70318329 L3.85577137,6.04848276 C3.63919061,6.17352571 3.50577137,6.40461463 3.50577137,6.65470054 L3.50577137,13.3452995 C3.50577137,13.5953854 3.63919061,13.8264743 3.85577137,13.9515172 L9.65,17.2968167 C9.86658075,17.4218597 10.1334192,17.4218597 10.35,17.2968167 L16.1442286,13.9515172 C16.3608094,13.8264743 16.4942286,13.5953854 16.4942286,13.3452995 L16.4942286,6.65470054 C16.4942286,6.40461463 16.3608094,6.17352571 16.1442286,6.04848276 L10.35,2.70318329 C10.1334192,2.57814034 9.86658075,2.57814034 9.65,2.70318329 Z" id="多边形" fill="url(#linearGradient-2)"></path>
+                <polygon id="路径-13备份" fill="url(#linearGradient-1)" transform="translate(10, 10) scale(-1, 1) translate(-10, -10)" points="3.24806947 5.56587843 17.2480695 13.5658784 16.7519305 14.4341216 2.75193053 6.43412157"></polygon>
+                <circle id="椭圆形" fill="#10E5FF" cx="10" cy="2" r="2"></circle>
+                <circle id="椭圆形备份-90" fill="#10E5FF" cx="10" cy="10" r="2"></circle>
+                <circle id="椭圆形备份-85" fill="#10E5FF" cx="10" cy="18" r="2"></circle>
+                <circle id="椭圆形备份-86" fill="#10E5FF" cx="3" cy="14" r="2"></circle>
+                <circle id="椭圆形备份-88" fill="#10E5FF" cx="17" cy="14" r="2"></circle>
+                <circle id="椭圆形备份-87" fill="#10E5FF" cx="3" cy="6" r="2"></circle>
+                <circle id="椭圆形备份-89" fill="#10E5FF" cx="17" cy="6" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

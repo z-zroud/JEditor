@@ -1,12 +1,14 @@
-﻿<Application x:Class="JControlTest.App"
+﻿<Application x:Class="JControlBaseTest.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:JControlTest"
+             xmlns:local="clr-namespace:JControlBaseTest"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/JControls;component/Styles/Themes/DarkTheme.xaml" />
+                <!--ResourceDictionary Source="/JControls;component/Styles/Themes/DarkTheme.xaml" /-->
+                <ResourceDictionary Source="/JControls;component/Styles/Themes/BlueWhiteTheme.xaml" />
+                <ResourceDictionary Source="/JControls;component/Styles/Themes/Geometries.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/JControls;component/Styles/Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

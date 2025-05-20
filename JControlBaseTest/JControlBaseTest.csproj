@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\communication.svg" />
+    <None Remove="Images\dataProcess.svg" />
+    <None Remove="Images\deepLearning.svg" />
+    <None Remove="Images\default.svg" />
+    <None Remove="Images\elementLocalization.svg" />
+    <None Remove="Images\flowControl.svg" />
+    <None Remove="Images\globalVar.svg" />
+    <None Remove="Images\imageAcquisition.svg" />
+    <None Remove="Images\imageProcess.svg" />
+    <None Remove="Images\measurement.svg" />
+    <None Remove="Images\other.svg" />
+    <None Remove="Images\storage.svg" />
+    <None Remove="Images\toolbox.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JControls\JControls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\communication.svg" />
+    <Resource Include="Images\dataProcess.svg" />
+    <Resource Include="Images\deepLearning.svg" />
+    <Resource Include="Images\default.svg" />
+    <Resource Include="Images\elementLocalization.svg" />
+    <Resource Include="Images\flowControl.svg" />
+    <Resource Include="Images\globalVar.svg" />
+    <Resource Include="Images\imageAcquisition.svg" />
+    <Resource Include="Images\imageProcess.svg" />
+    <Resource Include="Images\measurement.svg" />
+    <Resource Include="Images\other.svg" />
+    <Resource Include="Images\storage.svg" />
+    <Resource Include="Images\toolbox.svg" />
+  </ItemGroup>
+
+</Project>
